@@ -16,16 +16,13 @@ public class HelloWorld {
             Database database = manager.getDatabase("hello");
             Document document = database.createDocument();
 
-            // fetch document by key
-            Document documentFetched = database.getDocument("key");
-            if (documentFetched == null) {
-                // write a document
-                Map<String, Object> contents = new HashMap();
-                contents.put("key","value");
-                document.putProperties(contents);
-                documentFetched = database.getDocument("key");
-            }
+            // write a document
+            Map<String, Object> contents = new HashMap();
+            contents.put("key","value");
+            document.putProperties(contents);
 
+            // fetch document from database
+            Document documentFetched = database.getDocument(document.getId());
             System.out.println("documentFetched: " + documentFetched);
             System.out.println("documentFetched props: " + documentFetched.getProperties());
 
