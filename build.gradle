@@ -5,12 +5,16 @@ version = '1.0'
 
 repositories {
     mavenCentral()
+    maven { url 'http://files.couchbase.com/maven2/' }
 }
 
 dependencies {
+    
     testCompile group: 'junit', name: 'junit', version: '4.11'
 
     compile fileTree(dir: 'libs', include: '*.jar')
 
+    // to use maven artifacts, comment out the line above "compile fileTree(dir: 'libs') .." and uncomment this
+    // compile 'com.couchbase.lite:couchbase-lite-java:1.0.3-1000'
 
 }
