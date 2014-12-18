@@ -1,4 +1,7 @@
 apply plugin: 'java'
+apply plugin: "application"
+
+mainClassName = "helloworld.HelloWorld"
 
 sourceCompatibility = 1.5
 version = '1.0'
@@ -9,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    
+
     testCompile group: 'junit', name: 'junit', version: '4.11'
 
     compile fileTree(dir: 'libs', include: '*.jar')
